@@ -1,6 +1,6 @@
-#!/usr/bin/perl -I/Users/robzr/Dropbox/Projects/netscan/netscanmt/packages
+#!/usr/bin/perl 
 
-use netscan(qw(192.168.1.0/28));
+use netscan(qw(192.168.1.0/24));
 
 sub printIt {
   my ($test, $ip, $status) = @_;
@@ -22,7 +22,8 @@ printf "Finished, got %d results.\n", scalar(keys %status);
 
 foreach my $x ( netscan->sortbyip(keys %status)) {
   chomp($hostnames{$x});
-  printf "IP %s - %s (%s)\n", $x, $status{$x}, $hostnames{$x} if($status{$x} eq 'SUCCESSFUL');
+#  printf "IP %s - %s (%s)\n", $x, $status{$x}, $hostnames{$x} if($status{$x} eq 'SUCCESSFUL');
+  printf "IP %s - %s (%s)\n", $x, $status{$x}, $hostnames{$x};
 }
 
 exit;

@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+#
+# Multithreaded network scanning module -- Rob Zwissler
+#
 
 use strict;
 use v5.10.1;
